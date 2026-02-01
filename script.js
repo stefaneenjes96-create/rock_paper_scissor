@@ -36,7 +36,6 @@ function playGame() {
         }
     }
 
-
     function playRound() {
         const userChoice = getUserChoice();
         const computerChoice = getComputerChoice();
@@ -69,15 +68,12 @@ function playGame() {
         return moves[randomNumber];
         }
 
-        //get users choice//
         function getUserChoice() {
             let userChoice = prompt("Ready to play? Choose wisely from: Rock, Paper or Scissor");
             userChoice = userChoice.toLowerCase();
             userChoice = userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
             return userChoice;
         }
-
-
     }
             
 }
