@@ -19,20 +19,6 @@ function playGame() {
     const wantRules = confirm("Do i need to explain he rules?");
     if (wantRules) explainRules();
 
-    for (let  i = 0; i < rounds; i++) {
-        alert(`Round ${i + 1}.`);
-        playRound();
-        if (i === rounds - 1) {
-            if (userScore > computerScore) {
-                alert("You won the game!");
-            } else if (computerScore < computerScore) {
-                alert("You lost the game!");
-            } else if (userScore === computerScore) {
-                alert("You tied");
-            }
-        }
-    }
-
     function playRound() {
         const userChoice = getUserChoice();
         const computerChoice = getComputerChoice();
@@ -72,8 +58,5 @@ function playGame() {
             userChoice = userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
             return userChoice;
         }
-    }
-            
+    }         
 }
-
-askToPlay();
