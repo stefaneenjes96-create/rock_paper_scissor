@@ -11,6 +11,6 @@ i will aproach the problem with the following steps.
 
 Credits:
 
-Thanks for the rock icon https://www.flaticon.com/free-icons/coal
-thanks for the paper icon https://www.flaticon.com/free-icons/paper
-Thanks for the scissor icon https://www.flaticon.com/free-icons/scissor"
+Thanks for the rock icon https://www.flaticon.com/free-icons/coal.
+Thanks for the paper icon https://www.flaticon.com/free-icons/paper.
+Thanks for the scissor icon https://www.flaticon.com/free-icons/scissor".
