@@ -8,3 +8,9 @@ i will aproach the problem with the following steps.
 - write pseudocode with comments.
 - translate psuedocode to javascript.
 - test for edge cases.
+
+Credits:
+
+Thanks for the rock icon https://www.flaticon.com/free-icons/coal
+thanks for the paper icon https://www.flaticon.com/free-icons/paper
+Thanks for the scissor icon https://www.flaticon.com/free-icons/scissor"
