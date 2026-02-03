@@ -1,5 +1,3 @@
-const moves = ["Rock", "Paper", "Scissor"];
-
 function askToPlay() {
     const wantsToPlay = confirm("Welcome! would you like to rock-paper-scissor?");
     if (wantsToPlay) {
@@ -15,7 +13,7 @@ function explainRules() {
 
 function playGame() {
     let rounds = 5;
-    let humanScore = 0;
+    let userScore = 0;
     let computerScore = 0;
 
     const wantRules = confirm("Do i need to explain he rules?");
@@ -25,12 +23,11 @@ function playGame() {
         alert(`Round ${i + 1}.`);
         playRound();
         if (i === rounds - 1) {
-            console.log("who won?");
-            if (humanScore > computerScore) {
+            if (userScore > computerScore) {
                 alert("You won the game!");
             } else if (computerScore < computerScore) {
                 alert("You lost the game!");
-            } else if (humanScore === computerScore) {
+            } else if (userScore === computerScore) {
                 alert("You tied");
             }
         }
@@ -47,10 +44,10 @@ function playGame() {
             computerScore++;
         } else if (userChoice === "Rock" && computerChoice === "Scissor") {
             alert(`You won! The computer chose scissor.`);
-            humanScore++;
+            userScore++;
         } else if (userChoice === "Paper" && computerChoice === "Rock") {
             alert(`You won! The computer chose rock.`);
-            humanScore++;
+            userScore++;
         } else if (userChoice === "Paper" && computerChoice === "scissor") {
             alert(`You lose. The computer chose scissor.`);
             computerScore++;
@@ -61,11 +58,12 @@ function playGame() {
             alert(`You win! The computer chose Paper.`);
         }
 
-        alert(`The score is: You ${humanScore} / Computer ${computerScore}`);
+        alert(`The score is: You ${userScore} / Computer ${computerScore}`);
 
         function getComputerChoice() {
-        const randomNumber = Math.floor(Math.random() * 3);
-        return moves[randomNumber];
+            const moves = ["Rock", "Paper", "Scissor"];
+            const randomNumber = Math.floor(Math.random() * 3);
+            return moves[randomNumber];
         }
 
         function getUserChoice() {
