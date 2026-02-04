@@ -4,10 +4,38 @@ let playerScore = 0;
 let computerScore = 0;
 
 moveButtonsDiv.addEventListener("click", (event) => {
-    checkResult(event.target.id, computerMove());
+    compMove = computerMove();
+
+    checkResult(event.target.id, compMove);
+    changePlayerIcon(event.target.id, compMove);
 })
 
 newGameButton.addEventListener("click", () => resetScore());
+
+function changePlayerIcon(playerMove, computerMove) {
+    const playerIconDiv = document.querySelector(".playerMove");
+    const computerIconDiv = document.querySelector(".computerMove");
+
+    changeIcon(playerIconDiv, playerMove);
+    changeIcon(computerIconDiv, computerMove);
+
+    function changeIcon(entity, move) {
+        entity.textContent = ""
+
+        const img = document.createElement("img");
+
+        if (move === "rock") {
+            img.src = "images/coal.png";
+        } else if (move === "paper") {
+            img.src = "images/paper.png";
+        } else if (move === "scissor") {
+            img.src = "images/scissors.png";
+        }
+
+        entity.appendChild(img);
+    }
+
+} 
 
 function computerMove() {
     const rndNumber = Math.floor(Math.random() * 3);

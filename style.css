@@ -57,6 +57,11 @@ body {
     font-size: 96px;
 }
 
+.playerMove img {
+    width: 100px;
+    height: 100px;
+}
+
 .playerSide h3 {
     font-size: 32px;
 }
@@ -89,6 +94,11 @@ body {
 
 .computerSide p {
     font-size: 24px;
+}
+
+.computerMove img {
+    width: 100px;
+    height: 100px;
 }
 
 .score {
