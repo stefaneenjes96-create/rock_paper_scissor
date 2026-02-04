@@ -7,14 +7,18 @@ let computerScore = 0;
 moveButtonsDiv.addEventListener("click", (event) => {
     compMove = computerMove();
 
-    checkResult(event.target.id, compMove);
     changePlayerIcon(event.target.id, compMove);
+    checkResult(event.target.id, compMove);
 })
 
 newGameButton.addEventListener("click", () => resetScore());
-rulesButton.addEventListener("click", () => showRules())
+rulesButton.addEventListener("click", () => showRules());
 
 function changePlayerIcon(playerMove, computerMove) {
+    if (playerScore === 5 || computerScore === 5 ) {
+        return;
+    }
+
     const playerIconDiv = document.querySelector(".playerMove");
     const computerIconDiv = document.querySelector(".computerMove");
 
@@ -57,7 +61,11 @@ function computerMove() {
 function checkResult(playerMove, computerMove) {
     const resultPara = document.getElementById("result");
 
-    if (playerMove === computerMove) {
+    if (playerScore === 5) {
+        resultPara.textContent = "Congrats you won the game!";
+    } else if (computerScore === 5) {
+        resultPara.textContent = "Game over!";
+    } else if (playerMove === computerMove) {
         resultPara.textContent = "Tied";
     } else if (playerMove === "rock" && computerMove === "paper") {
         lose();
@@ -72,6 +80,8 @@ function checkResult(playerMove, computerMove) {
     } else if (playerMove === "scissor" && computerMove === "paper") {
         win();
     }
+
+
 
     function win() {
         resultPara.textContent = "You win";
