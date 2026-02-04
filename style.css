@@ -1,0 +1,137 @@
+/*
+navy #11224E
+orange #F87B1B
+olive #CBD99B
+white #EEEEEE
+*/
+
+
+body {
+    background-color: #EEEEEE;
+    color: #11224E;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    font-size: 48px;
+    text-align: center;
+    padding-top: 25px;
+    font-weight: 800;
+    background-color: #F87B1B;
+    border-bottom: 3px solid #11224E;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex: 1;
+}
+
+.playerSide{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.playerMove {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #F87B1B;
+    border: 4px solid #11224E;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 96px;
+}
+
+.playerSide h3 {
+    font-size: 32px;
+}
+
+.playerSide p {
+    font-size: 24px;
+}
+
+.computerSide {
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+
+.computerMove {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    background-color: #F87B1B;
+    border: 4px solid #11224E;
+    border-radius: 10%;
+    text-align: center;
+    font-size: 96px;
+}
+
+.computerSide h3 {
+    font-size: 32px;
+}
+
+.computerSide p {
+    font-size: 24px;
+}
+
+.moveButtons {
+    display: flex;
+    gap: 5%;
+}
+
+.move {
+    padding: 20px;
+    border: 4px solid #11224E;
+    border-radius: 10%;
+    background-color: #F87B1B;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.move:hover {
+    box-shadow: 5px 5px 3px #11224E;
+}
+
+.optionButtons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    
+}
+
+.optionButtons button {
+    padding: 10px;
+    margin: 20px 20px;
+    background-color: #F87B1B;
+    border: 3px solid #11224E;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.optionButtons button:hover {
+    box-shadow: 4px 4px 3px #11224E;
+}
+
+.footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #F87B1B;
+    border-top: 3px solid #11224E;
+}
+
+
+

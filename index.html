@@ -4,37 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Header">
-        <p>Rock-Paper-Scissor</p>
-    </div>
-
-    <div class="main">
-        <div class="playerSide">
-            <h3>Player</h3>
-            <p>Score: <span id="playerScore"></span></p>
-        </div>
-        
-        <div class="moveButtons">
-            <img src="images/coal.png" alt="Rock" width="100">
-            <img src="images/paper.png" alt="Paper" width="100">
-            <img src="images/scissors.png" alt="Scissor" width="100">
+    <div class="parent">
+        <div class="header">
+            <p>Rock-Paper-Scissor</p>
         </div>
 
-        <div class="computerSide">
-            <h3>Computer</h3>
-            <p>Score: <span id="computerScore"></span></p>
+        <div class="main">
+            <div class="playerSide">
+                <div class="score">
+                    <h3>Player</h3>
+                    <p>Score: <span id="playerScore">0</span></p>
+                </div>
+                <div class="playerMove">?</div>
+            </div>
+            
+            <div class="moveButtons">
+                <img class="move" src="images/coal.png" alt="Rock" width="100">
+                <img class="move" src="images/paper.png" alt="Paper" width="100">
+                <img class="move" src="images/scissors.png" alt="Scissor" width="100">
+            </div>
+
+            <div class="computerSide">
+                <div class="computerMove">?</div>
+                <div class="score">
+                    <h3>Computer</h3>
+                    <p>Score: <span id="computerScore">0</span></p>
+                </div>
+            </div>
         </div>
 
         <div class="optionButtons">
             <button id="rules">Rules</button>
             <button id="newGame">New game</button>
         </div>
-    </div>
 
-    <div class="footer">
-        <p>Made by Stefan Eenjes</p>
+        <div class="footer">
+            <p>Made by Stefan Eenjes</p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
