@@ -61,10 +61,8 @@ function computerMove() {
 function checkResult(playerMove, computerMove) {
     const resultPara = document.getElementById("result");
 
-    if (playerScore === 5) {
-        resultPara.textContent = "Congrats you won the game!";
-    } else if (computerScore === 5) {
-        resultPara.textContent = "Game over!";
+    if (playerScore === 5 || computerScore === 5) {
+        return;
     } else if (playerMove === computerMove) {
         resultPara.textContent = "Tied";
     } else if (playerMove === "rock" && computerMove === "paper") {
@@ -84,15 +82,25 @@ function checkResult(playerMove, computerMove) {
 
 
     function win() {
-        resultPara.textContent = "You win";
         playerScore++;
+        if (playerScore === 5) {
+            resultPara.textContent = "Congrats you won the game!";
+        } else {
+            resultPara.textContent = "You win";
+        }
+
         const playerScorePara = document.querySelector("#playerScore");
         playerScorePara.textContent = playerScore;
     }
 
     function lose() {
-        resultPara.textContent = "Computer wins";
         computerScore++;
+        if (computerScore === 5) {
+            resultPara.textContent = "Game over!"
+        } else {
+            resultPara.textContent = "Computer wins";
+        }
+
         const computerScorePara = document.querySelector("#computerScore");
         computerScorePara.textContent = computerScore;
     }
