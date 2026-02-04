@@ -1,5 +1,6 @@
 const moveButtonsDiv = document.querySelector(".moveButtons");
 const newGameButton = document.querySelector("#newGame");
+const rulesButton = document.querySelector("#rules");
 let playerScore = 0;
 let computerScore = 0;
 
@@ -11,6 +12,7 @@ moveButtonsDiv.addEventListener("click", (event) => {
 })
 
 newGameButton.addEventListener("click", () => resetScore());
+rulesButton.addEventListener("click", () => showRules())
 
 function changePlayerIcon(playerMove, computerMove) {
     const playerIconDiv = document.querySelector(".playerMove");
@@ -33,6 +35,14 @@ function changePlayerIcon(playerMove, computerMove) {
         }
 
         entity.appendChild(img);
+        shakeIcon(entity)
+    }
+
+    function shakeIcon(entity) {
+        entity.classList.add("shake");
+        entity.addEventListener("animationend", () => {
+            entity.classList.remove("shake");
+        }, { once: true})
     }
 
 } 
@@ -87,4 +97,9 @@ function resetScore() {
     computerScorePara.textContent = computerScore;
     const resultPara = document.querySelector("#result");
     resultPara.textContent = "";
+}
+
+function showRules() {
+    const resultPara = document.querySelector("#result");
+    resultPara.textContent = "Rock beats Scissor, Scissor beats Paper and Paper beats Rock."
 }
