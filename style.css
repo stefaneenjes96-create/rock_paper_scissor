@@ -33,9 +33,10 @@ body {
 
 .main {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex: 1;
+    flex: 3;
+    gap: 10%;
 }
 
 .playerSide{
@@ -46,6 +47,7 @@ body {
 
 .playerMove {
     width: 100px;
+    min-width: 100px;
     height: 100px;
     padding: 20px;
     background-color: #F87B1B;
@@ -71,6 +73,7 @@ body {
 
 .computerMove {
     width: 100px;
+    min-width: 100px;
     height: 100px;
     padding: 20px;
     background-color: #F87B1B;
@@ -88,6 +91,10 @@ body {
     font-size: 24px;
 }
 
+.score {
+    text-align: center;
+}
+
 .moveButtons {
     display: flex;
     gap: 5%;
@@ -103,6 +110,13 @@ body {
 
 .move:hover {
     box-shadow: 5px 5px 3px #11224E;
+}
+
+.result {
+    text-align: center;
+    flex: 1;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .optionButtons {

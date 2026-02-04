@@ -1,62 +1,62 @@
-function askToPlay() {
-    const wantsToPlay = confirm("Welcome! would you like to rock-paper-scissor?");
-    if (wantsToPlay) {
-        playGame();
-    } else {
-        alert("Goodbye.");
+const moveButtonsDiv = document.querySelector(".moveButtons");
+const newGameButton = document.querySelector("#newGame");
+let playerScore = 0;
+let computerScore = 0;
+
+moveButtonsDiv.addEventListener("click", (event) => {
+    checkResult(event.target.id, computerMove());
+})
+
+newGameButton.addEventListener("click", () => resetScore());
+
+function computerMove() {
+    const rndNumber = Math.floor(Math.random() * 3);
+    const moves = ["rock", "paper", "scissor"];
+    
+    return moves[rndNumber];
+}
+
+function checkResult(playerMove, computerMove) {
+    const resultPara = document.getElementById("result");
+
+    if (playerMove === computerMove) {
+        resultPara.textContent = "Tied";
+    } else if (playerMove === "rock" && computerMove === "paper") {
+        lose();
+    } else if (playerMove === "rock" && computerMove === "scissor") {
+        win();
+    } else if (playerMove === "paper" && computerMove === "rock") {
+        win()
+    } else if (playerMove === "paper" && computerMove === "scissor") {
+        lose();
+    } else if (playerMove === "scissor" && computerMove === "rock") {
+        lose();
+    } else if (playerMove === "scissor" && computerMove === "paper") {
+        win();
+    }
+
+    function win() {
+        resultPara.textContent = "You win";
+        playerScore++;
+        const playerScorePara = document.querySelector("#playerScore");
+        playerScorePara.textContent = playerScore;
+    }
+
+    function lose() {
+        resultPara.textContent = "Computer wins";
+        computerScore++;
+        const computerScorePara = document.querySelector("#computerScore");
+        computerScorePara.textContent = computerScore;
     }
 }
-
-function explainRules() {
-    alert("The rules are simple. You choose between rock, paper, scissor. rock beats scissor, paper beats rock and scissor beats paper. Best out of 5 wins.");
-}
-
-function playGame() {
-    let rounds = 5;
-    let userScore = 0;
-    let computerScore = 0;
-
-    const wantRules = confirm("Do i need to explain he rules?");
-    if (wantRules) explainRules();
-
-    function playRound() {
-        const userChoice = getUserChoice();
-        const computerChoice = getComputerChoice();
-
-        if (userChoice === computerChoice) {
-            alert(`Tied. You both chose ${userChoice}.`);
-        } else if (userChoice === "Rock" && computerChoice === "Paper") {
-            alert(`You lose. The computer chose paper.`);
-            computerScore++;
-        } else if (userChoice === "Rock" && computerChoice === "Scissor") {
-            alert(`You won! The computer chose scissor.`);
-            userScore++;
-        } else if (userChoice === "Paper" && computerChoice === "Rock") {
-            alert(`You won! The computer chose rock.`);
-            userScore++;
-        } else if (userChoice === "Paper" && computerChoice === "scissor") {
-            alert(`You lose. The computer chose scissor.`);
-            computerScore++;
-        } else if (userChoice === "Scissor" && computerChoice === "Rock") {
-            alert(`You lose. The computer chose rock.`);
-            computerScore++;
-        } else if (userChoice === "Scissor" && computerChoice === "Paper") {
-            alert(`You win! The computer chose Paper.`);
-        }
-
-        alert(`The score is: You ${userScore} / Computer ${computerScore}`);
-
-        function getComputerChoice() {
-            const moves = ["Rock", "Paper", "Scissor"];
-            const randomNumber = Math.floor(Math.random() * 3);
-            return moves[randomNumber];
-        }
-
-        function getUserChoice() {
-            let userChoice = prompt("Ready to play? Choose wisely from: Rock, Paper or Scissor");
-            userChoice = userChoice.toLowerCase();
-            userChoice = userChoice.charAt(0).toUpperCase() + userChoice.slice(1);
-            return userChoice;
-        }
-    }         
+ 
+function resetScore() {
+    playerScore = 0;
+    computerScore = 0;
+    const playerScorePara = document.querySelector("#playerScore");
+    playerScorePara.textContent = playerScore;
+    const computerScorePara = document.querySelector("#computerScore");
+    computerScorePara.textContent = computerScore;
+    const resultPara = document.querySelector("#result");
+    resultPara.textContent = "";
 }
